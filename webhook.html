@@ -1,0 +1,50 @@
+<div align="center">
+	<table>
+<form onsubmit="document.whForm.action = document.whForm.whURL.value;if(this.content.value==''){ event.preventDefault()};setTimeout(()=>{this.content.value=''},500)" method="POST" name="whForm">
+	<br />
+	<br />
+Url du webhook: <input name="whURL" onchange="localStorage.setItem('whURL',this.value)">
+	<br />
+	<br />
+Username: <input name="username" onchange="localStorage.setItem('username',this.value)">
+	<br />
+	<br />
+AvatarURL: <input name="avatar_url" onchange="localStorage.setItem('avatar_url',this.value);document.getElementById('image').src=this.value">
+	<br />
+	<br />
+<img id="image" width="100px" height="100px" alt="Entrez toutes les informations et appuyez sur le bouton 'envoyer'">	
+	<br />
+	<br />
+Content:<input name="content">
+	<br />
+	<br />
+<input type="submit">
+</form>
+</table>
+</div>
+<script>
+document.whForm.username.value = localStorage.getItem("username")
+document.whForm.avatar_url.value = localStorage.getItem("avatar_url")
+document.getElementById('image').src=localStorage.getItem("avatar_url")
+document.whForm.whURL.value = localStorage.getItem("whURL")
+
+document.whForm.action = document.whForm.whURL.value
+</script>
+
+<style type="text/css">
+	
+	body {
+		background-color: black;
+		color: white;
+		background-image: url(https://img.wallpapersafari.com/desktop/1536/864/91/81/1bWD6s.png);
+	}
+
+	input {
+		background: lightgrey;
+	}
+
+	#image {
+
+	}
+
+</style>
